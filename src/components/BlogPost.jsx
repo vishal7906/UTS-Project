@@ -15,7 +15,7 @@ const BlogDetail = () => {
       {/* Blog Header Image */}
       <div className="rounded-lg overflow-hidden mb-8">
         <img
-          src={blog.imageUrl}
+          src={blog.image}
           alt={blog.title}
           className="w-full h-72 object-cover"
         />
@@ -32,10 +32,7 @@ const BlogDetail = () => {
       {/* Blog Content */}
       <div className="prose prose-lg max-w-none mb-8">
         <p className="text-lg text-gray-700 leading-relaxed">
-          {blog.content || "This is a placeholder for the blog content. The content section is where you'll elaborate on the topic."}
-        </p>
-        <p className="text-lg text-gray-700 leading-relaxed">
-          {blog.description || "This is a sample description of the blog. The description is intended to give a summary of the blog's content."}
+          {blog.shortDescription || "This is a sample description of the blog. The description is intended to give a summary of the blog's content."}
         </p>
       </div>
 
@@ -43,12 +40,6 @@ const BlogDetail = () => {
       <blockquote className="border-l-4 border-blue-500 italic text-gray-600 pl-4 py-2 mb-8">
         "This is an example of a quote or an important note that you'd like to highlight in the blog post. It adds more value to the reader."
       </blockquote>
-
-      {/* Author Section */}
-      <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-        <h3 className="text-2xl font-semibold mb-2">About the Author</h3>
-        <p className="text-gray-600">John Doe is a seasoned writer and expert in digital marketing, known for his insights on industry trends and effective strategies.</p>
-      </div>
     </div>
   );
 };

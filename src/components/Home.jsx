@@ -1,8 +1,8 @@
 import React from 'react'
-
+import File from './Home/file'
 const Home = () => {
   return (
-    <div>Home</div>
+    <File />
   )
 }
 
