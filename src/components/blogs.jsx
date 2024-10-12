@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
+import { LoaderCircle } from 'lucide-react';
 const BlogSection = () => {
 
   const [blogs, setBlogs] = useState([]);
@@ -23,7 +24,7 @@ const BlogSection = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // You can customize loading state
+    return <div className='flex h-screen justify-center items-center'><LoaderCircle className='animate-spin' /></div>; // You can customize loading state
   }
   
   return (

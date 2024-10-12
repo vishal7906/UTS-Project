@@ -31,11 +31,12 @@ export const router = createBrowserRouter(
         <Route path='/auth' element={<AuthLayout />}>
           <Route path='login' element={<LoginPage />} />
         </Route>
-  
-        {/* Dashboard Layout for dashboard routes */}
         <Route path='/dashboard' element={<DashboardLayout />}>
           <Route path='home' element={<HomePage />} />
         </Route>
+
+        {/* Dashboard Layout for dashboard routes */}
+        
       </>
     )
   );

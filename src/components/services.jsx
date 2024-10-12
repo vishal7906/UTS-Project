@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 import { Carousel,CarouselContent,CarouselItem, } from './ui/carousel'
 import { Card,CardContent} from './ui/card'
 import Autoplay from 'embla-carousel-autoplay';
-import { Avatar,AvatarImage } from './ui/avatar';
+import { Avatar } from './ui/avatar';
 import image1 from '../assets/services1.avif'
 import image2 from '../assets/services2.avif'
 import image3 from '../assets/services3.avif'
 import { Button } from './ui/button'
-import { ArrowRight } from 'lucide-react'
-import { Headset } from 'lucide-react'
+import { ArrowRight, Headset,LoaderCircle } from 'lucide-react'
+
 const Services = () => {
   const [services,setServices] = useState([])
   const [loading, setLoading] = useState(true)
@@ -29,7 +29,7 @@ const Services = () => {
   }, []);
   
   if (loading) {
-    return <div>Loading...</div>; // You can customize loading state
+    return <div className='flex h-screen justify-center items-center'><LoaderCircle className='animate-spin' /></div>; // You can customize loading state
   }
   return (
   <div className="container mx-auto px-4 pt-16 text-center w-full ">
@@ -112,7 +112,7 @@ const Services = () => {
                 Talk To An Expert <ArrowRight size={29} className='ml-1'/>
               </Button>
             </Link>
-            <Link>
+            <Link to='tel:+91-8962597306'>
             <Button variant='ghost' className='ml-3 text-md text-center'> <Headset className='mr-2'/> +91-8962597306</Button>
             </Link>
            </div>

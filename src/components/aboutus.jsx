@@ -1,6 +1,6 @@
 import React from 'react';
 import image1 from '../assets/aboutUs1.jpg';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle,LoaderCircle } from 'lucide-react';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 
@@ -24,7 +24,7 @@ const AboutUs = () => {
   }, []);
   
   if (loading) {
-    return <div>Loading...</div>; // You can customize loading state
+    return <div className='flex h-screen justify-center items-center'><LoaderCircle className='animate-spin' /></div>; // You can customize loading state
   }
 
   return (

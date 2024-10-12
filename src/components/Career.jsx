@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button } from './ui/button';
+import { LoaderCircle } from 'lucide-react';
 import CareerCarousel from './CareerCarousel';
 
-const BlogSection = () => {
+const CareerSection = () => {
 
   const [careers, setCareer] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -26,7 +27,7 @@ const BlogSection = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // You can customize loading state
+    return <div className='flex h-screen justify-center items-center'><LoaderCircle className='animate-spin' /></div>; // You can customize loading state
   }
 
 
@@ -64,4 +65,4 @@ const BlogSection = () => {
   );
 };
 
-export default BlogSection;
+export default CareerSection;
