@@ -55,7 +55,7 @@ const CareerSection = () => {
               <h3 className="text-xl font-bold mb-2 text-blue-900">{career.title}</h3>
               <p className="text-gray-600 mb-4">{career.description}</p>
               {/* Passing individual blog data using state */}
-              <Link to={career.applyLink}><Button className="bg-blue-500 mt-2 flex">Apply Now</Button></Link>
+              <Link to={career.applyLink}><Button className="bg-blue-500 mt-2 flex ">Apply Now</Button></Link>
             </div>
           </div>
         ))}

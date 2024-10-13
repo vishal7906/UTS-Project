@@ -55,11 +55,10 @@ export default function Navbar() {
       <div className={`${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} fixed top-0 left-0 w-1/2 h-full bg-black z-20 transition-transform duration-300 ease-in-out md:hidden`}>
         <ul className="mt-20">
         `<li>
-            <Link to="/" className={`block text-sm px-2 py-4 hover:bg-blue-500 text-white font-semibold ${getNavLinkClass('/') ? 'bg-blue-500' : ''}`} onClick={closeMobileMenu}><img src={image} className='h-14 w-49 '/>
-            </Link>
+            <img src={image} className='h-14 w-49 '/>
           </li>
           <li>
-            <Link to="/" className={`block text-sm px-2 py-4 hover:bg-blue-500 text-white font-semibold ${getNavLinkClass('/') ? 'bg-blue-500' : ''}`} onClick={closeMobileMenu}>Home</Link>
+            <Link to="/" className={`block text-sm px-2 py-4 mt-1 hover:bg-blue-500 text-white font-semibold ${getNavLinkClass('/') ? 'bg-blue-500' : ''}`} onClick={closeMobileMenu}>Home</Link>
           </li>
           <li>
             <Link to="/services" className={`block text-sm px-2 py-4 text-white hover:bg-blue-500 transition duration-300 ${getNavLinkClass('/services')}`} onClick={closeMobileMenu}>Services</Link>

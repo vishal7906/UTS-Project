@@ -1,9 +1,12 @@
 import React from "react";
+import { useDataContext } from "./DataProvider";
 
 const AboutSection = () => {
+
+  const data = useDataContext();
   return (
     <section
-      className="about-section py-12 bg-gradient-to-br from-blue-600 to-cyan-400 text-white rounded-lg mb-10"
+      className="about-section py-12 bg-gradient-to-br from-blue-600 to-cyan-400 text-white mb-10"
       id="about-us"
     >
       <div className="container text-center">
@@ -11,10 +14,7 @@ const AboutSection = () => {
           About Us
         </h2>
         <p className="lead about-description text-lg text-fuchsia-100 leading-relaxed max-w-3xl mx-auto mb-4">
-          At Unstop Techno Solutions, we merge cutting-edge digital marketing with robust manufacturing sector solutions into a single system. Our unified approach enhances order processing, ensures quality control, and offers real-time tracking for better transparency.
-        </p>
-        <p className="about-description text-lg text-fuchsia-100 leading-relaxed max-w-3xl mx-auto mb-8">
-          As a leading provider of PLM (Product Lifecycle Management) solutions and digital marketing services, we help manufacturers enhance their product offerings, boost revenue, and optimize business operations. Our team offers a wide range of services tailored to simplify workflows and drive measurable results in both fields.
+          {data.aboutUs}
         </p>
         <a
           href="#services"

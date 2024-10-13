@@ -1,14 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
 const GetInTouch = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const [countryCodes, setCountryCodes] = useState([]); // To store country codes
+  const [selectedCode, setSelectedCode] = useState('+91'); // Default country code
+
+  // Fetch country codes from the REST Countries API
+  useEffect(() => {
+    const fetchCountryCodes = async () => {
+      try {
+        const response = await axios.get('https://restcountries.com/v3.1/all');
+        const countryData = response.data.map((country) => ({
+          name: country.name.common,
+          code: country.idd.root,
+          suffix: country.idd.suffixes ? country.idd.suffixes[0] : '',
+        }));
+        setCountryCodes(countryData);
+      } catch (error) {
+        console.error('Error fetching country codes:', error);
+      }
+    };
+
+    fetchCountryCodes();
+  }, []);
 
   const onSubmit = async (data) => {
     try {
+      // Prepend the country code to the mobile number
+      data.mobile = `${selectedCode}${data.mobile}`;
       // Submit the form data to the server or database
-      const response = await axios.post('https://your-backend-api.com/submit', data);
+      const response = await axios.post('https://backend-uts.vercel.app/api/contacts/submit', data);
       if (response.status === 200) {
         alert('Form submitted successfully!');
       }
@@ -56,21 +79,34 @@ const GetInTouch = () => {
             {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
           </div>
 
-          {/* Mobile Number Field */}
+          {/* Country Code and Mobile Number Field */}
           <div>
             <label className="block text-sm font-medium">Mobile number *</label>
-            <input
-              {...register('mobile', {
-                required: 'Mobile number is required',
-                pattern: {
-                  value: /^[0-9]{10}$/,
-                  message: 'Mobile number must be 10 digits',
-                },
-              })}
-              type="text"
-              placeholder="Enter your number"
-              className="mt-1 w-full p-2 border rounded"
-            />
+            <div className="flex">
+              <select
+                className="p-2 border rounded w-1/3 mr-2"
+                value={selectedCode}
+                onChange={(e) => setSelectedCode(e.target.value)}
+              >
+                {countryCodes.map((country, index) => (
+                  <option key={index} value={`${country.code}${country.suffix}`}>
+                    {country.name.substring(0, 3).toUpperCase()} ({country.code}{country.suffix})
+                  </option>
+                ))}
+              </select>
+              <input
+                {...register('mobile', {
+                  required: 'Mobile number is required',
+                  pattern: {
+                    value: /^[0-9]{10}$/,
+                    message: 'Mobile number must be 10 digits',
+                  },
+                })}
+                type="text"
+                placeholder="Enter your number"
+                className="mt-1 w-full p-2 border rounded"
+              />
+            </div>
             {errors.mobile && <p className="text-red-500 text-xs mt-1">{errors.mobile.message}</p>}
           </div>
 
@@ -89,6 +125,7 @@ const GetInTouch = () => {
           {/* Submit Button */}
           <div className="text-center">
             <button
+              onSubmit={onSubmit}
               type="submit"
               className="w-full bg-blue-500 text-white py-2 rounded-lg font-semibold hover:bg-blue-700"
             >
