@@ -34,7 +34,7 @@ const Homepage = () => {
 
   return (
     <div className="relative w-full h-[600px] overflow-hidden shadow-lg">
-      {slides.map((slide, index) => (
+      {slides?.map((slide, index) => (
         <div
           key={slide._id}
           className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}

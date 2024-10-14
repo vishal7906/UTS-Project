@@ -41,7 +41,7 @@ const GetInTouch = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
+    <div className="min-h-screen flex flex-col items-center justify-center mt-20">
       {/* Contact Form Section */}
       <div className="bg-blue-100 p-8 rounded-lg shadow-lg w-full max-w-md mt-4">
         <h2 className="text-3xl font-semibold text-center mb-4">Contact Us</h2>
@@ -84,13 +84,13 @@ const GetInTouch = () => {
             <label className="block text-sm font-medium">Mobile number *</label>
             <div className="flex">
               <select
-                className="p-2 border rounded w-1/3 mr-2"
+                className="border rounded w-1/3 mr-2"
                 value={selectedCode}
                 onChange={(e) => setSelectedCode(e.target.value)}
               >
-                {countryCodes.map((country, index) => (
-                  <option key={index} value={`${country.code}${country.suffix}`}>
-                    {country.name.substring(0, 3).toUpperCase()} ({country.code}{country.suffix})
+                {countryCodes?.map((country, index) => (
+                  <option key={index} value={`${country.code}${country.suffix}`} className='text-left'>
+                   {country.name.substring(0, 3).toUpperCase()} ({country.code}{country.suffix})
                   </option>
                 ))}
               </select>

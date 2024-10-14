@@ -6,7 +6,7 @@ const DataContext = createContext();
 
 // Create a provider component
 export const DataProvider = ({ children }) => {
-    const [data, setData] = useState('');
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
