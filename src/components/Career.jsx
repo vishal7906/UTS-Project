@@ -41,7 +41,7 @@ const CareerSection = () => {
         we customize our approach to drive impactful results for your business.
         </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mx-12">
-        {careers.map((career,index) => (
+        {careers?.map((career,index) => (
           <div 
             key={index} 
             className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col items-center text-center" // Centered text

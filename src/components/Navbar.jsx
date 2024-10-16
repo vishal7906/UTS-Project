@@ -18,7 +18,7 @@ export default function Navbar() {
     location.pathname === path ? 'border-b-2 border-blue-500' : '';
 
   return (
-    <nav className="bg-black shadow-lg fixed top-0 w-full z-10">
+    <nav className="bg-black shadow-lg fixed top-0 w-full z-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}

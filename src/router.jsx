@@ -7,10 +7,6 @@ import GetInTouch from './components/GetInTouch.jsx';
 import AboutUs from './components/aboutus.jsx';
 import Services from './components/services.jsx';
 import Career from './components/Career.jsx';
-import LoginPage from './pages/login.jsx';
-import AuthLayout from './layout/AuthLayout.jsx';
-import DashboardLayout from './layout/DashboardLayout.jsx';
-import HomePage from './pages/HomePage.jsx';
 
 
 export const router = createBrowserRouter(
@@ -26,16 +22,6 @@ export const router = createBrowserRouter(
           <Route path="services" element={<Services />} />
           <Route path="career" element={<Career />} />
         </Route>
-  
-        {/* Auth Layout for authentication routes */}
-        <Route path='/auth' element={<AuthLayout />}>
-          <Route path='login' element={<LoginPage />} />
-        </Route>
-        <Route path='/dashboard' element={<DashboardLayout />}>
-          <Route path='home' element={<HomePage />} />
-        </Route>
-
-        {/* Dashboard Layout for dashboard routes */}
         
       </>
     )
