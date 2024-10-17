@@ -6,7 +6,7 @@ const GetInTouch = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [countryCodes, setCountryCodes] = useState([]); // To store country codes
   const [selectedCode, setSelectedCode] = useState('+91'); // Default country code
-  const [isSubmitted, setIsSubmitted] = useState(false); // Corrected state spelling
+  const [isSubmitted, setIsSubmitted] = useState(false); 
 
   // Fetch country codes from the REST Countries API
   useEffect(() => {
@@ -34,17 +34,15 @@ const GetInTouch = () => {
       // Submit the form data to the server or database
       const response = await axios.post('https://backend-uts.vercel.app/api/contacts/submit', data);
 
-      if (response.status === 200) {
-        alert('Form submitted successfully!');
+      console.log(response.status);
+      
+      if (response.status === 201) {
         setIsSubmitted(true); // Update the state to true
-        
-        
       }
     } catch (error) {
       console.error('Error submitting form', error);
     }
   };
-  console.log(isSubmitted);
   return (
     <div className="min-h-screen flex flex-col items-center justify-center mt-20">
       {
