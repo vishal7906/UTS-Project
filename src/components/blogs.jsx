@@ -42,16 +42,16 @@ const BlogSection = () => {
             className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col items-center text-center" // Centered text
           >
             <img 
-              src={blog.image} 
-              alt={blog.title} 
+              src={blog?.image} 
+              alt={blog?.title} 
               className="w-full h-48 object-cover" 
             />
             <div className="p-6">
-              <h3 className="text-xl font-bold mb-2 text-customBlue">{blog.title}</h3>
-              <p className="text-gray-500 mb-4">{blog.shortDescription}</p>
+              <h3 className="text-xl font-bold mb-2 text-customBlue">{blog?.title}</h3>
+              <p className="text-gray-500 mb-4">{blog?.shortDescription}</p>
               {/* Passing individual blog data using state */}
               <Link 
-                to={`/blog/${blog.id}`} 
+                to={`/blog/${blog?.id}`} 
                 state={ blog } // Passing the individual blog as state
                 className="text-blue-600 hover:text-blue-800 font-semibold"
               >

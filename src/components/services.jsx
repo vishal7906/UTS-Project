@@ -48,7 +48,7 @@ const Services = () => {
           ]}
         className="w-full mx-auto ">
         <CarouselContent>
-          {services[0].services.map((service, index) => (
+          {services[0]?.services?.map((service, index) => (
             <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/4">
               <Card className="h-full border-2 border-dashed border-blue-500 hover:cursor-pointer hover:bg-blue-500 group">
                 <CardContent className="flex flex-col justify-between h-full p-6">
@@ -148,7 +148,7 @@ const Services = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               
               {
-                services[0].testimonials.map((service,index)=>(
+                services[0]?.testimonials?.map((service,index)=>(
                   <div key={index} className="flex flex-col items-center">
                     <div className="bg-yellow-500 rounded-full p-4 mb-4">
                       <img src={service.imageURL} alt={service.text} className="w-12 h-12"/>
@@ -171,7 +171,7 @@ const Services = () => {
         we customize our approach to fit your particular company requirements.
         </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mx-12">
-        {services[0].moreServices.map((service,index) => (
+        {services[0]?.moreServices?.map((service,index) => (
            <Card key={index} className="h-full border-2 border-dashed border-blue-500 hover:cursor-pointer hover:bg-blue-500 group">
            <CardContent className="flex flex-col justify-between items-center h-full p-6">
              {/* Avatar with proper centering and overflow hidden */}
