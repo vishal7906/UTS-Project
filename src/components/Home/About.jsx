@@ -17,7 +17,7 @@ const AboutSection = () => {
           {data.aboutUs}
         </p>
         <a
-          href="./services"
+          href="/services"
           className="btn btn-primary mt-4 bg-orange-600 py-3 px-6 text-lg text-wheat rounded-full transition-transform duration-300 hover:bg-orange-700 hover:-translate-y-1 hover:shadow-lg"
         >
           Learn More

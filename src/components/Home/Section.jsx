@@ -26,7 +26,7 @@ const Section = () => {
             <p className="text-xl text-gray-600 leading-relaxed mb-7">
               {sectionData?.[0].shortDescription}
             </p>
-            <a href="./services" className="inline-block py-3 px-6 bg-blue-500 text-white text-lg font-bold rounded-full shadow transition-colors duration-300 ease-in-out hover:bg-blue-600 transform hover:-translate-y-1">
+            <a href="/services" className="inline-block py-3 px-6 bg-blue-500 text-white text-lg font-bold rounded-full shadow transition-colors duration-300 ease-in-out hover:bg-blue-600 transform hover:-translate-y-1">
               Learn More
             </a>
           </div>
@@ -44,7 +44,7 @@ const Section = () => {
             <p className="text-xl text-gray-600 leading-relaxed mb-7">
               The art of creating engaging content involves telling tales that captivate readers, enlighten them, and motivate them to take action—converting site visitors into devoted supporters and followers.
             </p>
-            <a href="./services" className="inline-block py-3 px-6 bg-blue-500 text-white text-lg font-bold rounded-full shadow transition-colors duration-300 ease-in-out hover:bg-blue-600 transform hover:-translate-y-1">
+            <a href="/services" className="inline-block py-3 px-6 bg-blue-500 text-white text-lg font-bold rounded-full shadow transition-colors duration-300 ease-in-out hover:bg-blue-600 transform hover:-translate-y-1">
               Learn More
             </a>
           </div>

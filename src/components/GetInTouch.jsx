@@ -37,14 +37,14 @@ const GetInTouch = () => {
       if (response.status === 200) {
         alert('Form submitted successfully!');
         setIsSubmitted(true); // Update the state to true
-        console.log(isSubmitted);
+        
         
       }
     } catch (error) {
       console.error('Error submitting form', error);
     }
   };
-
+  console.log(isSubmitted);
   return (
     <div className="min-h-screen flex flex-col items-center justify-center mt-20">
       {
